@@ -391,7 +391,7 @@ export default {
         mAuth
           .signInWithEmailAndPassword(this.auth.email, this.auth.password)
           .catch(function (error) {
-            that.snackbarText = error.message;
+            that.snackbarText = "Oops! Something went wrong";
             that.snackbar = true;
             that.progress_bar = false;
           })
