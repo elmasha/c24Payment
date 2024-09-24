@@ -84,7 +84,7 @@
                             outlined
                             v-model="auth.password"
                             :counter="16"
-                            type="number"
+                            type="password"
                             label="Provide password"
                           ></v-text-field>
                         </div>
