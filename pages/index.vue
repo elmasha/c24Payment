@@ -530,13 +530,13 @@ export default {
       status: false,
       timerEnabled: false,
       show6: false,
-      timerCount: 25,
+      timerCount: 15,
       timer_Count: 15,
       valid: true,
       name: "",
       nameRules: [
         (v) => !!v || "Name is required",
-        (v) => (v && v.length <= 30) || "Name must be less than 30 characters",
+        (v) => (v && v.length >= 30) || "Name must be less than 30 characters",
       ],
       email: "",
       emailRules: [
@@ -856,13 +856,13 @@ export default {
               that.snackbar2 = true;
               that.snackbarText2 = response.data.errorMessage;
               that.errorResponse = response.data.errorMessage;
-              that.timerCount = 25;
+              that.timerCount = 15;
               that.timerEnabled = false;
             } else if (response.data.errorCode == "500.001.1001") {
               that.snackbar2 = true;
               that.snackbarText2 = response.data.errorMessage;
               that.errorResponse = response.data.errorMessage;
-              that.timerCount = 25;
+              that.timerCount = 15;
               that.timerEnabled = false;
             } else {
               if (response.data.ResultCode == "0") {
@@ -870,38 +870,38 @@ export default {
                 that.snackbarText = response.data.ResultDesc;
                 that.successResponse = response.data.ResultDesc;
                 that.timerEnabled = false;
-                that.timerCount = 25;
+                that.timerCount = 15;
               } else if (response.data.ResultCode == "1032") {
                 that.snackbar2 = true;
                 that.snackbarText2 = "Request was cancelled";
                 that.errorResponse = "Request was cancelled";
-                that.timerCount = 25;
+                that.timerCount = 15;
                 that.timerEnabled = false;
               } else if (response.data.ResultCode == "2001") {
                 that.snackbar2 = true;
                 that.snackbarText2 = "You entered a wrong pin";
                 that.errorResponse = "You entered a wrong pin";
-                that.timerCount = 25;
+                that.timerCount = 15;
                 that.timerEnabled = false;
               } else {
                 that.snackbar2 = true;
                 that.snackbarText2 = response.data.ResultDesc;
                 that.errorResponse = response.data.ResultDesc;
                 that.timerEnabled = false;
-                that.timerCount = 25;
+                that.timerCount = 15;
               }
             }
           } else if (response.status == 400) {
             that.snackbar2 = true;
             that.snackbarText2 = response.data;
-            that.timerCount = 25;
+            that.timerCount = 15;
             that.timerEnabled = false;
           }
         })
         .catch(function (error) {
           that.snackbar2 = true;
           that.snackbarText2 = error;
-          that.timerCount = 25;
+          that.timerCount = 15;
           that.timerEnabled = false;
           that.show6 = false;
         });
