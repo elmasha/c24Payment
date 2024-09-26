@@ -21,7 +21,12 @@
             <div class="container">
               <div class="d-flex">
                 <v-spacer />
-                <v-tabs color="green" centered :show-arrows="true">
+                <v-tabs
+                  color="green"
+                  background-color="black"
+                  centered
+                  :show-arrows="true"
+                >
                   <v-tab @click="register = false" value="one"><span>Log In</span></v-tab>
                 </v-tabs>
                 <v-spacer />
@@ -64,7 +69,8 @@
                           <v-spacer />
                         </div>
                       </v-col>
-                      <v-col cols="12">
+                      <v-col cols="12" md="4" sm="4"> </v-col>
+                      <v-col cols="12" md="4" sm="4">
                         <div class="">
                           <v-text-field
                             active-class="green"
@@ -76,8 +82,6 @@
                             label="Provide email"
                           ></v-text-field>
                         </div>
-                      </v-col>
-                      <v-col cols="12">
                         <div class="">
                           <v-text-field
                             active-class="green"
@@ -89,7 +93,7 @@
                           ></v-text-field>
                         </div>
                       </v-col>
-                      <v-col cols="12"> </v-col>
+                      <v-col cols="12" md="4" sm="4"> </v-col>
                     </v-row>
                   </v-form>
 

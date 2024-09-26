@@ -4,9 +4,10 @@
       <v-row justify="" align="" id="charter">
         <v-col cols="12" sm="12" md="12">
           <v-toolbar color="black" elevation="0" extended extension-height="30">
+            <v-spacer />
             <nuxt-link class="nuxt-link" to="/">
               <v-img
-                style="margin-top: 30px; margin-start: 36px"
+                style="margin-top: 38px; margin-start: 36px"
                 :src="logo"
                 contain
                 height="90"
@@ -96,7 +97,6 @@
                     >
                       Make a Deposit
                     </v-btn>
-
                     <div class="container">
                       <div class="text--green" v-show="snackbar" style="color: green">
                         {{ successResponse }}
@@ -230,7 +230,13 @@
       >
         {{ snackbarText_s }}
       </v-snackbar>
-      <v-snackbar color="success" :timeout="2000" v-model="snackbar" outlined center>
+      <v-snackbar
+        light
+        color="success text--black"
+        :timeout="3000"
+        v-model="snackbar"
+        center
+      >
         {{ snackbarText }}
       </v-snackbar>
       <v-snackbar color="error" :timeout="2500" v-model="snackbar2" outlined center>
