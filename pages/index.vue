@@ -83,7 +83,7 @@
                       type="number"
                       :rules="nameRules"
                       label="Provide Mpesa number"
-                      placeholder="2547 34-3400-7734"
+                      placeholder="7-34-340-774"
                       required
                     ></v-text-field>
 
@@ -136,7 +136,6 @@
                                       v-model="Quantity"
                                       outlined
                                       dense
-                                      rounded
                                       @change="getTotalAmount()"
                                       :rules="nameRules"
                                       type="number"
@@ -149,7 +148,6 @@
                                       v-model="Amount"
                                       outlined
                                       dense
-                                      rounded
                                       :rules="nameRules"
                                       type="number"
                                       label="Enter amount"
@@ -161,11 +159,10 @@
                                       v-model="Phone"
                                       outlined
                                       dense
-                                      rounded
                                       type="number"
                                       :rules="nameRules"
                                       label="Provide Mpesa number"
-                                      placeholder="2547 34-3400-7734"
+                                      placeholder="7-34-340-774"
                                       required
                                     ></v-text-field>
 
@@ -484,7 +481,7 @@ export default {
         (value) => (value || "").length <= 4 || "Max 4 characters",
       ],
       deposit: true,
-      Quantity: 0,
+      Quantity: 1,
       depo_amount: "",
       depo_number: "",
       showB: false,
@@ -534,10 +531,7 @@ export default {
       timer_Count: 15,
       valid: true,
       name: "",
-      nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => (v && v.length >= 30) || "Name must be less than 30 characters",
-      ],
+      nameRules: [(v) => !!v || "Name is required"],
       email: "",
       emailRules: [
         (v) => !!v || "E-mail is required",
@@ -750,7 +744,7 @@ export default {
         that.show6 = true;
         axios
           .post("https://charge24rervsalserver-7ead59ad5fb9.herokuapp.com/stk_shop", {
-            Phonenumber: that.Phone,
+            Phonenumber: "254" + that.Phone,
             amount: that.Amount,
           })
           .then(function (response) {
@@ -796,7 +790,7 @@ export default {
         that.show6 = true;
         axios
           .post("https://charge24rervsalserver-7ead59ad5fb9.herokuapp.com/stk_shop", {
-            Phonenumber: that.depo_number,
+            Phonenumber: "254" + that.depo_number,
             amount: that.depo_amount,
           })
           .then(function (response) {
