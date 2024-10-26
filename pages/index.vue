@@ -521,7 +521,7 @@ export default {
       payment2: require("@/assets/payment.svg"),
       errorResponse: "",
       successResponse: "",
-      Amount: 1000,
+      Amount: 2000,
       Phone: null,
       UserName: "",
       snackbar_s: false,
