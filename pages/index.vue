@@ -749,7 +749,7 @@ export default {
       } else {
         that.show6 = true;
         axios
-          .post("https://charge24rervsalserver-7ead59ad5fb9.herokuapp.com/stk_shop", {
+          .post("https://chargeb2c-78a6d3d19f7e.herokuapp.com/stk_shop", {
             Phonenumber: "254" + that.Phone,
             amount: that.Amount,
           })
@@ -795,7 +795,7 @@ export default {
       } else {
         that.show6 = true;
         axios
-          .post("https://charge24rervsalserver-7ead59ad5fb9.herokuapp.com/stk_shop", {
+          .post("https://chargeb2c-78a6d3d19f7e.herokuapp.com/stk_shop", {
             Phonenumber: "254" + that.depo_number,
             amount: that.depo_amount,
           })
@@ -845,7 +845,7 @@ export default {
       that.snackbar_s = true;
       that.snackbarText_s = "Checking payment status...";
       axios
-        .post("https://charge24rervsalserver-7ead59ad5fb9.herokuapp.com/stk_shop/query", {
+        .post("https://chargeb2c-78a6d3d19f7e.herokuapp.com/stk_shop/query", {
           checkoutRequestId: that.CheckoutRequestID,
         })
         .then(function (response) {
